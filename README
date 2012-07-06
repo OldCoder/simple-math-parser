@@ -1,0 +1,94 @@
+simple-math-parser notes                               Revised: 120705
+----------------------------------------------------------------------
+
+1. Overview.
+
+1.1. This  project provides a  CLI (i.e., non-GUI)  calculator program
+written in pure Perl 5.
+
+The  point  of  the project is to illustrate the structure of a simple
+math parser. A recursive-descent approach is used.
+
+1.2. Features:
+
+* The program only needs Linux (or BSD UNIX)  and Perl 5.  No non-core
+CPAN modules or external parser tools or libraries are required.
+
+* PEMDAS compliant. For more information about this point, visit:
+
+      http://en.wikipedia.org/wiki/PEMDAS
+
+* Supports the four standard operators plus ** (exponentiation),  some
+math functions  (sqrt, cbrt, log, sin, cos, and tan),  and a  few sym-
+bolic constants (e, phi, and pi).
+
+* Real numbers may optionally use scientific notation.
+
+* The core consists of  a single  reasonably straightforward recursive
+routine (ParseMath).
+
+1.3. "simple-math-parser" was created by OldCoder:
+
+      Site:    http://oldcoder.org/
+      Mail:    oldcoder@yahoo.com
+      GitHub:  https://github.com/OldCoder/
+      Repo:    https://github.com/OldCoder/simple-math-parser.git
+
+The license used for the current version is  Creative Commons Attribu-
+tion NonCommercial ShareAlike 3.0 Unported.
+
+----------------------------------------------------------------------
+
+2. Usage.
+
+The program may be invoked as follows:
+
+      simple-math-parser.pl EXPRESSION
+
+Example:
+
+      simple-math-parser.pl "1.5+(2/3)*pi-sqrt(2)"
+
+Note that file permissions should be  set properly  before the program
+is used. For example:
+
+      chmod 755 simple-path-parser.pl
+
+This is a CLI (i.e., non-GUI)  calculator program that takes a  single
+arithmetic expression  as  an  argument, evaluates it,  and prints the
+result to standard output.
+
+If the expression is omitted,  the program will print usage documenta-
+tion instead.
+
+As a general rule, expressions should be quoted as shown here.  Other-
+wise, "shell meta-character" problems may occur.
+
+Numbers may  be  integers,  ordinary real numbers,  or real numbers in
+scientific notation.  Examples of scientific notation: 1.3e+0 is equal
+to 1.3, 12e-1 is equal to 1.2, and 5e+1 is equal to 50.  The + sign is
+optional in this context.
+
+Supported operators include:
+
++ (add), - (subtract or unary minus), * (multiply), / (divide), and **
+(exponentiate).
+
+Six functions are supported: sqrt (square root), cbrt (cube root), log
+(natural logarithm),  sin, cos, and tan. The last three functions take
+angles in radians.
+
+Three standard constants may be used: e,  phi (the Golden Ratio),  and
+pi.
+
+----------------------------------------------------------------------
+
+3. Development.
+
+The source code consists of a single well-commented Perl 5 source file
+named:
+
+      simple-math-parser.pl
+
+No  "build"  is required.  The source file is a script that's ready to
+run.
